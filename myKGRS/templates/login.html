@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>登录</title>
+
+<link rel="stylesheet" href="../static/css/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../static/css/style.css">
+
+
+
+</head>
+<body>
+<!--看板娘 - 猫-->
+  <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+  <script>
+      L2Dwidget.init({
+          "model": {
+              jsonPath: "https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json",<!--这里改模型，前面后面都要改-->
+              "scale": 1
+          },
+          "display": {
+              "position": "left",<!--设置看板娘的上下左右位置-->
+              "width": 50,
+              "height": 100,
+              "hOffset": 70,
+              "vOffset": 0
+          },
+          "mobile": {
+              "show": true,
+              "scale": 0.5
+          },
+          "react": {
+              "opacityDefault": 0.7,<!--设置透明度-->
+              "opacityOnHover": 0.2
+          }
+      });
+  window.onload = function(){
+       $("#live2dcanvas").attr("style","position: fixed; opacity: 0.7; left: 800px; bottom: 400px; z-index: 1; pointer-events: none;")
+  }
+  </script> 
+<video src="../static/image/video.mp4" style="width: 100%;height: 100%;position: relative;top: 0;left: 0px;" autoplay="autoplay" loop="loop" muted="muted"></video>
+<div class="materialContainer">
+	<div class="box">
+		<div class="title">登录</div>
+		
+		<form action="query" method="post" onsubmit="return checkForm()">
+		 <div class="input">
+			<label for="name">用户名</label>
+			<input type="text" name="username" id="name" autocomplete="off">
+			<span class="spin"></span>
+		</div>
+		<div class="input">
+			<label for="pass">密码</label>
+			<input type="password" name="password" id="pass" autocomplete="off">
+			<input type="hidden" id="md5pass" >
+			<span class="spin"></span>
+		</div>
+		<div class="input">
+			
+			<input type="text" name="code" value placeholder="请输入图中的校验码" maxlength=5 size=8>
+			<a href="/login">
+				<img src="/getpng">
+			</a>
+			<span class="spin"></span>
+		</div>
+		<div class="button login">
+			<button type="submit" name="submit1" value="登录">
+				<span>登录</span>
+				<i class="fa fa-check"></i>
+			</button>
+		</div>
+		<a href="javascript:" class="pass-forgot" >忘记密码？</a>
+		</form>
+		
+		
+		
+		
+	</div>
+
+	<div class="overbox">
+		<div class="material-button alt-2">
+			<span class="shape"></span>
+		</div>
+		<div class="title">注册</div>
+		
+		<form action="save" method="post">
+		 <div class="input">
+			<label for="regname">用户名</label>
+			<input type="text" name="username" id="regname" autocomplete="off">
+			<span class="spin"></span>
+		</div>
+		
+		<div class="input">
+			<label for="regpass">密码</label>
+			<input type="password" name="password" id="regpass" autocomplete="off" >
+			<span class="spin"></span>
+		</div>
+		
+		<div class="input">
+			
+			<input type="text" name="code" value placeholder="请输入图中的校验码" maxlength=5 size=8>
+			<a href="/login">
+				<img src="/getpng">
+			</a>
+			<span class="spin"></span>
+		</div>
+		
+		
+		
+		<div class="button">
+			<button type="submit" name="submit1" value="注册">
+				<span>注册</span>
+			</button>
+		</div>
+		</form>
+		
+	</div>
+
+</div>
+
+<script src="../static/script/jquery.min.js"></script>
+<script src="../static/script/index.js"></script>
+<script src="http://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js"></script> 
+
+</body>
+</html>

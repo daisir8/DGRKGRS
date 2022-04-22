@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../static/font/font_svcu02nytc/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../static/style/public.css" />
+		<link rel="stylesheet" type="text/css" href="../static/style/index.css" />
+		<script src="https://cdn.bootcss.com/echarts/4.1.0.rc2/echarts.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+		<style type="text/css">
+*{font-size: 16px; padding:0; margin:0;}
+.main1{
+	position: relative;
+	margin: 20px auto;
+	border: 1px solid steelblue;
+	width: 430px;
+	height: 600px;
+	display: inline-block;
+}
+.msgInput{
+	display: block;
+	width: 406px;
+	height: 160px;
+	margin: 10px auto;
+	
+}
+.sendbtn{
+	position: absolute;
+	width: 100px;
+	height: 29px;
+	bottom: 5px;
+	right: 10px;
+}
+.content{
+	list-style: none;
+	width: 410px;
+	height: 380px;
+	margin: 5px auto;
+	border: 1px dotted #D1D3D6;
+	overflow-y: scroll;
+}
+.msgContent{
+	width:auto;
+	max-width: 250px;
+	height: auto;
+	word-break: break-all;
+	margin: 5px;
+	padding: 3px;
+	border-radius: 5px;
+}
+
+.content .textleft{
+	float: left;
+	text-align: left;
+	background-color: lightgrey;
+}
+.content .textright{
+	float: right;
+	text-align: right;
+	background-color: yellowgreen;
+}
+.content .imgleft{
+	float:left;
+	text-align: left;
+}
+.content .imgright{
+	float:right;
+	text-align: right;
+}
+</style>
+
+	</head>
+	<body>
+		
+		<div class="head">
+			<div class="header">
+				<div class="container">
+					<div class="logo"><a href="/index"><img src="../static/image/logoblack.png" ></a></div>
+					<ul class="titlelist">
+						<li><a href="/index">首页</a></li>
+						<li><a href="/activity">问答推荐</a></li>
+						<li><a href="/imglist">图库</a></li>
+					</ul>
+					<div class="dengru">
+						<div><a href="/login">登录</a></div>
+						<div><a href="/login">注册</a></div>
+					</div>
+				</div>
+			</div>
+			<div style="height: 10px" >
+				
+			</div>
+				
+		<div class="dgrstyle">
+		<div id="main" style="width:1000px;height:600px; display: inline-block"></div>
+		
+		
+		<style type="text/css"> 
+		    #tagsList {position:relative;top:0px; left:85px; width:250px; height:250px; }
+		#tagsList a {position:absolute; top:0px; left:0px; font-family: Microsoft YaHei; color:gray; font-weight:bold; text-decoration:none; padding: 3px 6px; }
+		#tagsList a:hover { color:#249e92; letter-spacing:2px;}
+		#search:focus{
+		    border: 1px solid #249e92;
+		}
+		</style>
+		
+		
+		
+		 
+		
+		<div id="main1" class="main1">
+			
+					<ul id="content" class="content">
+						<div class="col-lg-4" id="tagsList">
+						    <a href="#" data="上海" style="left: 27.5383px; top: 35.3989px; font-size: 14px; opacity: 0.399602; z-index: 0;">上海</a><a href="#" data="北京" style="left: 88.756px; top: -5.68002px; font-size: 14px; opacity: 0.573148; z-index: 1;">北京</a><a href="#" data="天津" style="left: 145.141px; top: 32.1437px; font-size: 13px; opacity: 0.327847; z-index: 2;">天津</a><a href="#" data="广州" style="left: 101.797px; top: 100.384px; font-size: 13px; opacity: 0.19228; z-index: 3;">广州</a><a href="#" data="深圳" style="left: 25.8181px; top: 127.392px; font-size: 13px; opacity: 0.288564; z-index: 4;">深圳</a><a href="#" data="中山" style="left: -12.8049px; top: 98.1811px; font-size: 14px; opacity: 0.618309; z-index: 5;">中山</a><a href="#" data="惠州" style="left: 24.862px; top: 45.709px; font-size: 16px; opacity: 1.0655; z-index: 6;">惠州</a><a href="#" data="厦门" style="left: 112.033px; top: 15.056px; font-size: 16px; opacity: 1.17177; z-index: 7;">厦门</a><a href="#" data="漳州" style="left: 191.778px; top: 32.2603px; font-size: 15px; opacity: 0.815337; z-index: 8;">漳州</a><a href="#" data="武汉" style="left: 209.301px; top: 91.3563px; font-size: 14px; opacity: 0.455392; z-index: 9;">武汉</a><a href="#" data="长沙" style="left: 165.477px; top: 160.905px; font-size: 13px; opacity: 0.289417; z-index: 10;">长沙</a><a href="#" data="南昌" style="left: 83.2186px; top: 203.518px; font-size: 13px; opacity: 0.328058; z-index: 11;">南昌</a><a href="#" data="南京" style="left: 16.0984px; top: 197.945px; font-size: 14px; opacity: 0.602708; z-index: 12;">南京</a><a href="#" data="苏州" style="left: 16.7751px; top: 152.87px; font-size: 16px; opacity: 1.16777; z-index: 13;">苏州</a><a href="#" data="无锡" style="left: 80.2861px; top: 104.406px; font-size: 18px; opacity: 1.73124; z-index: 14;">无锡</a><a href="#" data="青岛" style="left: 170.878px; top: 95.2345px; font-size: 17px; opacity: 1.4933; z-index: 15;">青岛</a><a href="#" data="丽江" style="left: 216.956px; top: 142.18px; font-size: 15px; opacity: 0.885046; z-index: 16;">丽江</a><a href="#" data="济南" style="left: 174.59px; top: 210.572px; font-size: 14px; opacity: 0.619219; z-index: 17;">济南</a><a href="#" data="哈尔滨" style="left: 96.8363px; top: 227.593px; font-size: 15px; opacity: 0.870605; z-index: 18;">哈尔滨</a><a href="#" data="香格里拉" style="left: 119.442px; top: 181.533px; font-size: 17px; opacity: 1.45228; z-index: 19;">香格里拉</a>
+						</div>
+						
+						<img class="msgContent imgleft" src="../static/image/t1.jpg" >
+						<li class="msgContent textleft">你好，我是小呆同学，你的智能旅游景点推荐机器人。<br>您可以向我发送你感兴趣的景点名称</li>
+						<div style="clear:both"></div>
+					</ul>
+					<textarea id="msg_input" class="msgInput"></textarea>
+					<button id="sendbtn" class="sendbtn"  onclick="javascrtpt:window.location.href='/activity2'">发送</button>
+					
+				</div>	
+			
+			
+		</div>
+		
+		
+		
+			
+		<div class="footer">
+			<div class="container">
+				<div class="footer-yi">
+					<h3><img src="../static/image/logoblack.png" ></h3>
+					<div>
+						<p>DGRKGRS是以旅游爱好者为核心的旅游景点推荐系统,</p>
+						<p>以多模态知识图谱为基础，进行精准个性化的景点推荐。</p>
+					</div>
+				</div>
+				<div class="footer-er">
+					<div>
+						<h3>关注我们</h3>
+						<ul>
+							<li><a href="#"><i class="iconfont icon-weibo"></i></a></li>
+							<li><a href="#"><i class="iconfont icon-weixin"></i></a></li>
+						</ul>
+					</div>
+					<div>
+						<h3>APP下载</h3>
+						<img src="../static/image/qqimg.png" >
+					</div>
+					<div>
+						<div><a href="#"><i  class="iconfont icon-pingguo"></i><span style="font-size:6px">iOS下载</span></a></div>
+						<div><a href="#"><i  class="iconfont icon-android-fill"></i><span style="font-size:6px">Android下载</span></a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript" src="../static/script/jquery-3.4.1.min.js"></script>
+		<script type="text/javascript" src="../static/script/js.js"></script>
+		<script src="../static/script/tags.js"></script>
+		<script type="text/javascript">
+		$(function(){
+			$('.sendbtn').click(function(){
+				var content = $('#msg_input').val();
+				var resdata = {{resdata|safe}};
+				//var resdata  = {{resdata|safe}};
+				
+				$('#content').append('<img class="msgContent imgright" src="../static/image/t2.jpg" ><li class="msgContent textright">'+content+'<li>').append
+('<div style="clear:both"></div>');
+				
+				$('#content').append('<img class="msgContent imgleft" src="../static/image/t1.jpg" ><li class="msgContent textleft">'+resdata+'<li>').append
+('<div style="clear:both"></div>');
+				
+				$('#msg_input').val('')
+				$.ajax({
+					type:'POST',
+					url:'/activity2/',
+					data:{
+						'data':content
+					}, 
+					dataType:'json',
+					async:false,
+					success:function(data){
+						//alert(data);
+					},
+					complete:function(data){
+						//alert(resdata);
+					}
+				})
+
+			});
+			
+			$(window).keydown(function(e){
+				if(e.ctrlKey && e.keyCode==13){
+					var content = $('#msg_input').val();
+						$('#content').append('<img class="msgContent imgright" src="../static/image/t2.jpg" ><li class="msgContent textright">'+content
++'<li>').append('<div style="clear:both"></div>');
+$('#content').append('<img class="msgContent imgleft" src="../static/image/t1.jpg" ><li class="msgContent textleft">'+resdata+'<li>').append
+('<div style="clear:both"></div>');
+				$('#msg_input').val('')
+				}
+				$.ajax({
+					type:'POST',
+					url:'/activity2/',
+					data:{
+						'data':content
+					}, 
+					dataType:'json',
+					success:function(data){
+						//alert(data);
+					},
+					complete:function(data){
+						//alert(resdata);
+					}
+				})
+			})
+		})
+		
+		
+		
+	
+		
+		
+		
+	var data={{data|safe}};	
+	var link={{link|safe}};	
+	var content = $('#msg_input').val();
+	var myChart = echarts.init(document.getElementById('main'));
+    var categories = [];
+    for (var i = 0; i < 3; i++) {
+        categories[i] = {
+            name: '层次' + i
+        };
+    }
+    option = {
+        // 图的标题
+        title: {
+            text: '景点推荐'
+        },
+        // 提示框的配置
+        tooltip: {
+            formatter: function (x) {
+                return x.data.des;
+            }
+        },
+        // 工具箱
+        toolbox: {
+            // 显示工具箱
+            show: true,
+            feature: {
+                mark: {
+                    show: true
+                },
+                // 还原
+                restore: {
+                    show: true
+                },
+                // 保存为图片
+                saveAsImage: {
+                    show: true
+                }
+            }
+        },
+        legend: [{
+            // selectedMode: 'single',
+            data: categories.map(function (a) {
+                return a.name;
+            })
+        }],
+        series: [{
+            type: 'graph', // 类型:关系图
+            layout: 'force', //图的布局，类型为力导图
+            symbolSize: 40, // 调整节点的大小
+			
+            roam: true, // 是否开启鼠标缩放和平移漫游。默认不开启。如果只想要开启缩放或者平移,可以设置成 'scale' 或者 'move'。设置成 true 为都开启
+            edgeSymbol: ['circle', 'arrow'],
+            edgeSymbolSize: [2, 10],
+            edgeLabel: {
+                normal: {
+                    textStyle: {
+                        fontSize: 20
+                    }
+                }
+            },
+            force: {
+                repulsion: 2500,
+                edgeLength: [10, 50]
+            },
+            draggable: true,
+            lineStyle: {
+                normal: {
+                    width: 2,
+                    color: '#4b565b',
+                }
+            },
+            edgeLabel: {
+                normal: {
+                    show: true,
+                    formatter: function (x) {
+                        return x.data.name;
+                    }
+                }
+            },
+            label: {
+                normal: {
+                    show: true,
+                    textStyle: {}
+                }
+            },
+ 
+            // 数据
+            data: data,
+            links: link,
+            categories: categories,
+        }]
+    };
+    myChart.setOption(option);
+	</script>
+	
+    
+
+
+	</body>
+</html>
